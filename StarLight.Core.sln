@@ -5,8 +5,6 @@ VisualStudioVersion = 18.6.11819.183 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarLight.Core", "StarLight.Core.csproj", "{31804C47-220A-4EBA-85E4-041D2153D853}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLDemo", "C:\Users\Xu Zimu\source\repos\SLDemo\SLDemo.csproj", "{67E6FCF2-CCB2-A954-A20E-83AAAE59259F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
