@@ -13,7 +13,7 @@ public class MicrosoftSkinFetcher
     /// <summary>
     /// 获取微软皮肤
     /// </summary>
-    /// <param name="account">皮肤图片字节信息</param>
+    /// <param name="account">微软账户</param>
     /// <returns>皮肤图片字节信息</returns>
     public static async Task<byte[]> GetMicrosoftSkinAsync(MicrosoftAccount account)
     {

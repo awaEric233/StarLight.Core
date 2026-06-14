@@ -206,8 +206,12 @@ public class MicrosoftAuthentication
             RelyingParty = "http://auth.xboxlive.com",
             TokenType = "JWT"
         };
+        var options = new JsonSerializerOptions()
+        {
+            WriteIndented = true
+        };
 
-        var xblLoginContentString = xboxLoginContent.Serialize();
+        var xblLoginContentString = xboxLoginContent.Serialize(options);
 
         string xboxResponseString;
 
@@ -238,7 +242,7 @@ public class MicrosoftAuthentication
             TokenType = "JWT"
         };
 
-        var xstsPostData = getXstsJsonData.Serialize();
+        var xstsPostData = getXstsJsonData.Serialize(options);
 
         var xstsResponse = await HttpUtil.SendHttpPostRequest("https://xsts.auth.xboxlive.com/xsts/authorize",
             xstsPostData, "application/json");
