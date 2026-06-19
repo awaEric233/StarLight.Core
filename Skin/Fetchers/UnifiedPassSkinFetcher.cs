@@ -1,4 +1,5 @@
 using System.Text;
+using StarLight_Core.Models.Authentication;
 using StarLight_Core.Models.Skin;
 using StarLight_Core.Utilities;
 
@@ -12,9 +13,19 @@ public class UnifiedPassSkinFetcher
     /// <summary>
     /// 获取统一通行证皮肤
     /// </summary>
-    /// <param name="uuid">微软账户 Uuid</param>
+    /// <param name="account">统一通行证账户</param>
     /// <returns>皮肤图片字节信息</returns>
-    public static async Task<byte[]> GetMicrosoftUnifiedPassSkinAsync(string uuid)
+    public static async Task<byte[]> GetUnifiedPassSkinAsync(UnifiedPassAccount account)
+    {
+        return await GetUnifiedPassSkinAsync(account.Uuid);
+    }
+
+    /// <summary>
+    /// 获取统一通行证皮肤
+    /// </summary>
+    /// <param name="uuid">统一通行证账户 Uuid</param>
+    /// <returns>皮肤图片字节信息</returns>
+    public static async Task<byte[]> GetUnifiedPassSkinAsync(string uuid)
     {
         const string baseUrl = "https://auth.mc-user.com:233/sessionserver/session/minecraft/profile/";
         var skinJson = await HttpUtil.GetStringAsync(baseUrl + uuid);

@@ -30,7 +30,7 @@ public class SkinProcessor
     /// <param name="base64Image"></param>
     /// <param name="outputFilePath"></param>
     /// <param name="isDecoration"></param>
-    public static void GetLiftLeg(string base64Image, string outputFilePath, bool isDecoration = false)
+    public static void GetLeftLeg(string base64Image, string outputFilePath, bool isDecoration = false)
     {
         var imageBytes = Convert.FromBase64String(base64Image);
 
@@ -126,7 +126,7 @@ public class SkinProcessor
     /// <param name="base64Image"></param>
     /// <param name="outputFilePath"></param>
     /// <param name="isDecoration"></param>
-    public static void GetLiftArm_Alex(string base64Image, string outputFilePath, bool isDecoration = false)
+    public static void GetLeftArm_Alex(string base64Image, string outputFilePath, bool isDecoration = false)
     {
         var imageBytes = Convert.FromBase64String(base64Image);
 
@@ -222,7 +222,7 @@ public class SkinProcessor
     /// <param name="base64Image"></param>
     /// <param name="outputFilePath"></param>
     /// <param name="isDecoration"></param>
-    public static void GetLiftArm_Steve(string base64Image, string outputFilePath, bool isDecoration = false)
+    public static void GetLeftArm_Steve(string base64Image, string outputFilePath, bool isDecoration = false)
     {
         var imageBytes = Convert.FromBase64String(base64Image);
 

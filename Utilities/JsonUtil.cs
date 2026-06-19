@@ -79,11 +79,12 @@ public static class JsonUtil
     /// 将对象序列化为 JSON 字符串
     /// </summary>
     /// <param name="obj">要序列化的对象</param>
+    /// <param name="options">可选的序列化选项</param>
     /// <returns>表示对象的 JSON 字符串；若 <paramref name="obj"/> 为 null，则返回字符串 "null"</returns>
     /// <exception cref="ArgumentNullException">当 <paramref name="obj"/> 为 null 时抛出</exception>
-    public static string Serialize(this object? obj)
+    public static string Serialize(this object? obj, JsonSerializerOptions? options = null)
     {
-        return obj is null ? throw new ArgumentNullException(nameof(obj)) : JsonSerializer.Serialize(obj, Options);
+        return obj is null ? throw new ArgumentNullException(nameof(obj)) : JsonSerializer.Serialize(obj, options ?? Options);
     }
 
     /// <summary>
@@ -95,7 +96,7 @@ public static class JsonUtil
     /// </returns>
     /// <exception cref="JsonException">JSON 字符串格式无效时抛出</exception>
     public static JsonNode? ToJsonNode(this string json) => JsonNode.Parse(json);
-    
+
     /// <summary>
     /// 将 JSON 字符串解析为 <see cref="JsonDocument"/> 对象
     /// </summary>
