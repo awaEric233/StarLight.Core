@@ -33,11 +33,11 @@ public static class FileUtil
     /// <param name="key">密钥</param>
     /// <param name="content">内容</param>
     /// <exception cref="Exception"></exception>
-    public static Status CryptoWriteFile(string filePath, FileMode fileMode,byte[] key,string content)
+    public static Status CryptoWriteFile(string filePath, FileMode fileMode, byte[] key, string content)
     {
         try
         {
-            using (FileStream fileStream = new("TestData.txt", fileMode))
+            using (FileStream fileStream = new(filePath, fileMode))
             {
                 using (Aes aes = Aes.Create())
                 {
