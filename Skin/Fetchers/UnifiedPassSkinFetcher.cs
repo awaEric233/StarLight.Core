@@ -17,18 +17,19 @@ public class UnifiedPassSkinFetcher
     /// <returns>皮肤图片字节信息</returns>
     public static async Task<byte[]> GetUnifiedPassSkinAsync(UnifiedPassAccount account)
     {
-        return await GetUnifiedPassSkinAsync(account.Uuid);
+        return await GetUnifiedPassSkinAsync(account.ServerId, account.Uuid);
     }
 
     /// <summary>
     /// 获取统一通行证皮肤
     /// </summary>
+    /// <param name="serverId">统一通行证账户服务器 Id</param>
     /// <param name="uuid">统一通行证账户 Uuid</param>
     /// <returns>皮肤图片字节信息</returns>
-    public static async Task<byte[]> GetUnifiedPassSkinAsync(string uuid)
+    public static async Task<byte[]> GetUnifiedPassSkinAsync(string serverId, string uuid)
     {
-        const string baseUrl = "https://auth.mc-user.com:233/sessionserver/session/minecraft/profile/";
-        var skinJson = await HttpUtil.GetStringAsync(baseUrl + uuid);
+        var url = $"https://auth.mc-user.com:233/{serverId}/sessionserver/session/minecraft/profile/{uuid}";
+        var skinJson = await HttpUtil.GetStringAsync(url);
         var skinUrl =
             Encoding.UTF8.GetString(
                     Convert.FromBase64String(
